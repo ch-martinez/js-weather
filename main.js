@@ -1,7 +1,12 @@
-const lat = '-33.13067'
-const lon = '-64.34992'
 const api_key = 'cb1d7125416c813760e7c7a3ae1f3d85'
-const api_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}&lang=es&units=Metric`
+
+
+const get_weather = (lat, lon) => {
+    const api_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}&lang=es&units=Metric`
+
+}
+
+const api_geo_url = (city) => `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${api_key}`
 
 const input_location = document.getElementById('input_location')
 const btn_getLocation = document.getElementById('btn_getLocation')
@@ -15,8 +20,6 @@ const w_max = document.getElementById('w_max')
 const w_status = document.getElementById('w_status')
 const w_wind_spd = document.getElementById('w_wind_spd')
 const w_location = document.getElementById('w_location')
-
-console.log(w_temp)
 
 const renderWeather = (w) => {
     w_temp.textContent = `${w.main.temp}°`
@@ -38,8 +41,23 @@ const fetchData = async (url) => {
     }
 }
 
-btn_getLocation.addEventListener('click', (e) => {
+const fetchGeo = async (url) => {
+    try {
+        const response = await fetch(url)
+        const data = response.json()
+        console.log(data)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getLocation = () => {
+    
+}
+
+input_location.addEventListener('keyup', (e) => {
     e.preventDefault()
-    fetchData(api_url)
+    console.log(e.target.value)
+    fetchGeo(api_geo_url(e.target.value))
 })
- 
