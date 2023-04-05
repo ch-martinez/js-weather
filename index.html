@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <title>APP Clima</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <form action="" class="location_container" id="location_container">
+            <input type="text" name="" class="input_location" id="input_location">
+            <p class="p_location">or</p>
+            <button class="btn_getLocation" id="btn_getLocation">Get device location</button>
+        </form>
+
+        <div class="weather_container" id="weather_container">
+            <div class="span_container">
+                <span class="w_temp" id="w_temp"></span>
+            </div>
+            <div class="span_container">
+                <span class="indicator">Min: </span>
+                <span class="w_min" id="w_min"></span>
+            </div>
+            <div class="span_container">
+                <span class="indicator">Max: </span>
+                <span class="w_max" id="w_max"></span>
+            </div>
+            <div class="span_container">
+                <span class="w_status" id="w_status"></span>
+            </div>
+            <div class="span_container">
+                <span class="indicator">Viento: </span>
+                <span class="w_wind_spd" id="w_wind_spd"></span>
+            </div>
+            <div class="span_container">
+                <span class="indicator">Localidad: </span>
+                <span class="w_location" id="w_location"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/main.js" defer></script>
+</body>
+
 </html>
