@@ -5,44 +5,74 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>APP Clima</title>
 </head>
 
 <body>
-    <div class="container" id="container">
+    <div class="main_container" id="main_container">
         <form action="" class="location_container" id="location_container">
-            <input type="text" name="" class="input_location" id="input_location">
+            <div class="form_item input_container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="" class="input_location" id="input_location" placeholder="Ingrese una ciudad...">
+            </div>
             <p class="p_location">or</p>
-            <button class="btn_getLocation" id="btn_getLocation">Get device location</button>
+            <button class="form_item btn_getLocation" id="btn_getLocation">Get device location</button>
         </form>
 
-        <div class="weather_container" id="weather_container">
-            <div class="span_container">
+        <div class="weather_container hidde" id="weather_container">
+
+            <div class="data_container">
+                <div class="data_location_container">
+                    <i class="fa-solid fa-circle-left btn_back" id="btn_back"></i>
+
+                    <i class="fa-solid fa-location-dot location_icon"></i>
+                    <span class="w_location" id="w_location"></span>
+                </div>
+                <img alt="" class="w_icon" id="w_icon">
                 <span class="w_temp" id="w_temp"></span>
+                <div class="status_container">
+                    <span class="w_status" id="w_status"></span>
+                </div>
             </div>
-            <div class="span_container">
-                <span class="indicator">Min: </span>
-                <span class="w_min" id="w_min"></span>
-            </div>
-            <div class="span_container">
-                <span class="indicator">Max: </span>
-                <span class="w_max" id="w_max"></span>
-            </div>
-            <div class="span_container">
-                <span class="w_status" id="w_status"></span>
-            </div>
-            <div class="span_container">
-                <span class="indicator">Viento: </span>
-                <span class="w_wind_spd" id="w_wind_spd"></span>
-            </div>
-            <div class="span_container">
-                <span class="indicator">Localidad: </span>
-                <span class="w_location" id="w_location"></span>
+
+            <div class="details_container">
+                <div class="details_item">
+                    <i class="fa-solid fa-temperature-quarter"></i>
+                    <span class="detail_value w_feels" id="w_feels"></span>
+                    <span class="detail_name">sensacion</span>
+                </div>
+                <div class="details_item">
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                    <span class="detail_value w_min" id="w_min"></span>
+                    <span class="detail_name">min</span>
+                </div>
+                <div class="details_item">
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                    <span class="detail_value w_max" id="w_max"></span>
+                    <span class="detail_name">max</span>
+                </div>
+                <div class="details_item">
+                    <i class="fa-solid fa-wind"></i>
+                    <span class="detail_value w_wind_spd" id="w_wind_spd"></span>
+                    <span class="detail_name">viento</span>
+                </div>
+                <div class="details_item">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span class="detail_value w_humidity" id="w_humidity"></span>
+                    <span class="detail_name">humedad</span>
+                </div>    
+                <div class="details_item">
+                    <i class="fa-solid fa-grip-lines"></i>
+                    <span class="detail_value w_pressure" id="w_pressure"></span>
+                    <span class="detail_name">presion</span>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/d40e0e3e22.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
